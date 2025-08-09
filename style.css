@@ -11,6 +11,7 @@ body {
   background: #f5f7fa;
   color: #333;
   scroll-behavior: smooth;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 a {
@@ -55,7 +56,6 @@ nav .logo {
   object-fit: contain;
 }
 
-
 nav ul {
   list-style: none;
   display: flex;
@@ -71,6 +71,16 @@ nav ul li a {
 
 nav ul li a:hover {
   color: #ffca28;
+}
+
+#toggle-theme {
+  background: transparent;
+  border: none;
+  color: white;
+  font-size: 1.3rem;
+  cursor: pointer;
+  padding: 0;
+  user-select: none;
 }
 
 /* Container geral */
@@ -143,6 +153,32 @@ p {
 
 .btn-primary:hover {
   background-color: #003d99;
+}
+
+/* Botão WhatsApp nos formulários */
+.btn-whatsapp {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  background-color: #25D366;
+  color: white;
+  font-weight: 600;
+  padding: 0.7rem 1.4rem;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  font-size: 1rem;
+  user-select: none;
+  margin-top: 0.8rem;
+  transition: background-color 0.3s ease;
+}
+
+.btn-whatsapp i {
+  font-size: 1.3rem;
+}
+
+.btn-whatsapp:hover {
+  background-color: #1ebe5b;
 }
 
 /* Serviços - grid */
@@ -566,4 +602,164 @@ footer {
   form {
     padding: 1.2rem 1rem;
   }
+}
+
+/* --- Modo Escuro --- */
+body.dark-mode {
+  background-color: #121212;
+  color: #ddd;
+}
+
+body.dark-mode nav {
+  background: #1a1a1a;
+  box-shadow: 0 3px 10px rgba(255, 255, 255, 0.1);
+}
+
+body.dark-mode nav.scrolled {
+  background: #333;
+  box-shadow: 0 3px 15px rgba(255, 255, 255, 0.15);
+}
+
+body.dark-mode nav ul li a {
+  color: #ddd;
+}
+
+body.dark-mode nav ul li a:hover {
+  color: #ffca28;
+}
+
+body.dark-mode h1, 
+body.dark-mode h2, 
+body.dark-mode h3 {
+  color: #90caf9;
+}
+
+body.dark-mode p, 
+body.dark-mode .blog-post p,
+body.dark-mode .faq-answer {
+  color: #ccc;
+}
+
+body.dark-mode .service-card {
+  background: #222;
+  box-shadow: 0 4px 15px rgb(255 255 255 / 0.05);
+  color: #ddd;
+}
+
+body.dark-mode .service-card h3 {
+  color: #bbdefb;
+}
+
+body.dark-mode .price-table {
+  background: #222;
+  color: #ccc;
+  box-shadow: 0 4px 20px rgb(255 255 255 / 0.05);
+}
+
+body.dark-mode .price-table thead {
+  background-color: #333;
+  color: #fff;
+}
+
+body.dark-mode .price-table tbody tr:nth-child(even) {
+  background-color: #2a2a2a;
+}
+
+body.dark-mode .price-table tbody tr:hover {
+  background-color: #444;
+}
+
+body.dark-mode .blog-post {
+  background: #222;
+  box-shadow: 0 4px 15px rgb(255 255 255 / 0.08);
+  color: #ddd;
+}
+
+body.dark-mode .faq-item {
+  background: #222;
+  box-shadow: 0 4px 15px rgb(255 255 255 / 0.07);
+}
+
+body.dark-mode .faq-question {
+  background: #333;
+  color: #ddd;
+}
+
+body.dark-mode .faq-question:hover {
+  background: #555;
+}
+
+body.dark-mode .faq-question::after {
+  color: #ffca28;
+}
+
+body.dark-mode .promo-list {
+  background: #222;
+  color: #90caf9;
+  box-shadow: 0 4px 18px rgb(255 255 255 / 0.1);
+}
+
+body.dark-mode .cert-list {
+  background: #222;
+  color: #90caf9;
+  box-shadow: 0 4px 18px rgb(255 255 255 / 0.1);
+}
+
+body.dark-mode form {
+  background: #222;
+  color: #ddd;
+  box-shadow: 0 4px 20px rgb(255 255 255 / 0.1);
+}
+
+body.dark-mode form label {
+  color: #90caf9;
+}
+
+body.dark-mode form input[type="text"],
+body.dark-mode form input[type="email"],
+body.dark-mode form select,
+body.dark-mode form textarea {
+  background-color: #333;
+  border-color: #555;
+  color: #ddd;
+}
+
+body.dark-mode form input[type="text"]::placeholder,
+body.dark-mode form input[type="email"]::placeholder,
+body.dark-mode form select::placeholder,
+body.dark-mode form textarea::placeholder {
+  color: #aaa;
+}
+
+body.dark-mode form input[type="text"]:focus,
+body.dark-mode form input[type="email"]:focus,
+body.dark-mode form select:focus,
+body.dark-mode form textarea:focus {
+  border-color: #90caf9;
+  outline: none;
+}
+
+body.dark-mode form button[type="submit"] {
+  background-color: #90caf9;
+  color: #121212;
+}
+
+body.dark-mode form button[type="submit"]:hover {
+  background-color: #64b5f6;
+}
+
+body.dark-mode .feedback-card {
+  background: #222;
+  box-shadow: 0 5px 18px rgb(255 255 255 / 0.1);
+  color: #ddd;
+}
+
+body.dark-mode .social-fixed a.whatsapp {
+  background-color: #1ebe5b;
+}
+
+body.dark-mode .social-fixed a.instagram {
+  background: radial-gradient(circle at 30% 107%, 
+    #fdf497 0%, #fdf497 5%, 
+    #fd5949 45%, #d6249f 60%, #285AEB 90%);
 }
