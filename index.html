@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>AndreyGuimer Informática</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet" />
+  <script src="https://kit.fontawesome.com/a81368914c.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- Navbar -->
+  <nav id="navbar">
+    <div class="logo">
+      <img src="logo.png" alt="Logo AndreyGuimer" class="logo-img" />
+      AndreyGuimer Informática
+    </div>
+    <ul>
+      <li><a href="#home">Início</a></li>
+      <li><a href="#services">Serviços</a></li>
+      <li><a href="#pricing">Preços</a></li>
+      <li><a href="#blog">Blog</a></li>
+      <li><a href="#gallery">Galeria</a></li>
+      <li><a href="#videos">Vídeos</a></li>
+      <li><a href="#faq">FAQ</a></li>
+      <li><a href="#promo">Promoções</a></li>
+      <li><a href="#certifications">Certificações</a></li>
+      <li><a href="#budget">Orçamento</a></li>
+      <li><a href="#feedback">Feedback</a></li>
+      <li><a href="#contact">Contato</a></li>
+      <li><button id="toggle-theme" title="Alternar modo claro/escuro"><i class="fas fa-adjust"></i></button></li>
+    </ul>
+  </nav>
+
+  <main class="container">
+
+    <!-- Home -->
+    <section id="home" class="visible">
+      <h1>Bem-vindo à AndreyGuimer Informática</h1>
+      <p>Seu parceiro confiável para serviços de informática, manutenção, formatação, limpeza e muito mais.</p>
+      <button class="btn-primary" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">Solicite um Orçamento</button>
+    </section>
+
+    <!-- Serviços -->
+    <section id="services">
+      <h2>Serviços Oferecidos</h2>
+      <div class="services-grid">
+        <div class="service-card">
+          <i class="fas fa-laptop-code"></i>
+          <h3>Formatação e Instalação de SO</h3>
+          <p>Formatação completa e instalação de Windows, Linux e outros sistemas operacionais com otimização do desempenho.</p>
+        </div>
+        <div class="service-card">
+          <i class="fas fa-tools"></i>
+          <h3>Manutenção Preventiva e Corretiva</h3>
+          <p>Limpeza física, troca de peças, consertos e diagnóstico completo para manter seu equipamento sempre em dia.</p>
+        </div>
+        <div class="service-card">
+          <i class="fas fa-network-wired"></i>
+          <h3>Instalação do Pacote Office</h3>
+          <p>Instalação e configuração do pacote Ofiice, com total seguraça e 100% PERMANENTE.</p>
+        </div>
+        <div class="service-card">
+          <i class="fas fa-shield-alt"></i>
+          <h3>Segurança e Backup</h3>
+          <p>Instalação de antivírus, proteção contra malware e configuração de backups para proteger seus dados.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Preços -->
+    <section id="pricing">
+      <h2>Tabela de Preços</h2>
+      <table class="price-table">
+        <thead>
+          <tr><th>Serviço</th><th>Descrição</th><th>Preço</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Formatação</td><td>Formatação e instalação do sistema operacional</td><td>R$ 80,00</td></tr>
+          <tr><td>Manutenção Preventiva</td><td>Limpeza física e otimização de hardware</td><td>R$ 60,00</td></tr>
+          <tr><td>Configuração de Rede</td><td>Instalação e configuração de Wi-Fi ou cabeada</td><td>R$ 50,00</td></tr>
+          <tr><td>Backup de Dados</td><td>Cópia e segurança dos seus arquivos importantes</td><td>R$ 40,00</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <!-- Blog -->
+    <section id="blog">
+      <h2>Últimas do Blog</h2>
+      <article class="blog-post">
+        <h3>5 Dicas para Aumentar a Vida Útil do Seu PC</h3>
+        <p>Manter o computador limpo e atualizado é essencial para garantir seu desempenho e durabilidade. Veja nossas dicas para cuidar melhor do seu equipamento.</p>
+        <a href="#" target="_blank">Leia mais</a>
+      </article>
+      <article class="blog-post">
+        <h3>O Que Fazer Quando o Computador Não Liga?</h3>
+        <p>Problemas de hardware podem ser assustadores, mas há passos simples para diagnóstico inicial. Saiba o que verificar antes de procurar ajuda especializada.</p>
+        <a href="#" target="_blank">Leia mais</a>
+      </article>
+      <article class="blog-post">
+        <h3>Como Escolher um Antivírus de Confiança</h3>
+        <p>Proteja seus dados com segurança. Descubra o que observar na hora de escolher um antivírus eficiente e leve para seu PC.</p>
+        <a href="#" target="_blank">Leia mais</a>
+      </article>
+    </section>
+
+    <!-- Galeria -->
+    <section id="gallery">
+      <h2>Galeria de Fotos</h2>
+      <div class="gallery-slider">
+        <img src="gallery1.jpg" alt="Antes e depois do serviço 1" class="gallery-img active" />
+        <img src="gallery2.jpg" alt="Antes e depois do serviço 2" class="gallery-img" />
+        <img src="gallery3.jpg" alt="Setup e ferramentas" class="gallery-img" />
+      </div>
+      <div class="gallery-controls">
+        <button id="prevBtn"><i class="fas fa-chevron-left"></i></button>
+        <button id="nextBtn"><i class="fas fa-chevron-right"></i></button>
+      </div>
+    </section>
+
+    <!-- Vídeos -->
+    <section id="videos">
+      <h2>Vídeos Explicativos</h2>
+      <div class="video-container">
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/9NJj12tJ0Yc" title="Dicas de Manutenção" frameborder="0" allowfullscreen></iframe>
+      </div>
+      <div class="video-container">
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/Fkp0c_j4Vt4" title="Como Formatar PC" frameborder="0" allowfullscreen></iframe>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section id="faq">
+      <h2>Perguntas Frequentes</h2>
+      <div class="faq-item">
+        <button class="faq-question">Quanto tempo leva a formatação?</button>
+        <div class="faq-answer">Normalmente entre 1 a 3 horas, dependendo do estado do computador e do sistema a ser instalado.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question">Faz conserto de notebook?</button>
+        <div class="faq-answer">Sim, realizamos manutenção preventiva e corretiva em notebooks de várias marcas.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question">Atende fora da cidade?</button>
+        <div class="faq-answer">Atualmente o atendimento é presencial em Altinho, mas podemos combinar suporte remoto.</div>
+      </div>
+    </section>
+
+    <!-- Promoções -->
+    <section id="promo">
+      <h2>Promoções e Pacotes</h2>
+      <ul class="promo-list">
+        <li><strong>Pacote Completo:</strong> R$ 70,00</li>
+        <li><strong>Manutenção Preventiva + Limpeza Preventiva:</strong> R$ 50,00</li>
+        <li><strong>Desconto especial para clientes recorrentes!</strong></li>
+      </ul>
+    </section>
+
+    <!-- Certificações -->
+    <section id="certifications">
+      <h2>Certificações e Parcerias</h2>
+      <ul class="cert-list">
+        <li><i class="fas fa-certificate"></i> Curso Técnico em Manutenção de Computadores</li>
+        <li><i class="fas fa-certificate"></i> Parceiro Microsoft</li>
+        <li><i class="fas fa-certificate"></i> Treinamento em Montagem e Manutenção de Computadores</li>
+      </ul>
+    </section>
+
+    <!-- Orçamento -->
+    <section id="budget">
+      <h2>Solicite um Orçamento Detalhado</h2>
+      <form action="https://formsubmit.co/andreyguimerinformatica@gmail.com" method="POST" />
+        <label for="clientName">Nome Completo:</label>
+        <input type="text" id="clientName" name="clientName" required placeholder="Seu nome completo" />
+
+        <label for="clientEmail">Email:</label>
+        <input type="email" id="clientEmail" name="clientEmail" required placeholder="seu@email.com" />
+
+        <label for="serviceType">Tipo de Serviço:</label>
+        <select id="serviceType" name="serviceType" required>
+          <option value="">Selecione</option>
+          <option value="formatação">Formatação e Instalação de SO</option>
+          <option value="manutencao">Manutenção Preventiva e Corretiva</option>
+          <option value="rede">Configuração de Redes</option>
+          <option value="backup">Segurança e Backup</option>
+          <option value="outro">Outro</option>
+        </select>
+
+        <label for="details">Detalhes do Serviço:</label>
+        <textarea id="details" name="details" rows="4" placeholder="Descreva o serviço que deseja" required></textarea>
+
+        <button type="submit">Enviar Orçamento</button>
+      </form>
+    </section>
+
+   
+
+    <!-- Feedback -->
+    <section id="feedback">
+      <h2>Depoimentos de Clientes</h2>
+      <div class="feedback-cards">
+        <div class="feedback-card">
+          <p>Ótimo atendimento, rapidez e preço justo. Recomendo demais!</p>
+          <div class="author">- João Silva</div>
+        </div>
+        <div class="feedback-card">
+          <p>Meu computador estava muito lento, após a manutenção voltou a funcionar perfeitamente.</p>
+          <div class="author">- Maria Oliveira</div>
+        </div>
+        <div class="feedback-card">
+          <p>Excelente suporte para configuração da minha rede Wi-Fi. Muito obrigado!</p>
+          <div class="author">- Carlos Eduardo</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contato -->
+    <section id="contact">
+      <h2>Fale Comigo</h2>
+      <form action="https://formsubmit.co/andreyguimerinformatica@gmail.com" method="POST" />
+        <label for="name">Nome:</label>
+        <input type="text" id="name" name="name" placeholder="Seu nome" required />
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" placeholder="seu@email.com" required />
+
+        <label for="message">Mensagem:</label>
+        <textarea id="message" name="message" rows="5" placeholder="Escreva sua mensagem aqui..." required></textarea>
+
+        <button type="submit">Enviar</button>
+      </form>
+    </section>
+
+    <!-- Notícias tecnologia -->
+  <section id="noticias">
+  <h2>Notícias de Tecnologia</h2>
+  <ul id="news-list">
+    <li>Carregando notícias...</li>
+  </ul>
+</section>
+
+    <!-- Mapa -->
+    <section id="map">
+      <h2>Localização</h2>
+      <div class="map-container">
+        <iframe 
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3904.833871187755!2d-36.27091678530652!3d-8.439328283686346!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x7aa8939165d2813%3A0x68b137e5a79770ec!2sAltinho%2C%20Pernambuco!5e0!3m2!1spt-BR!2sbr!4v1686767565477!5m2!1spt-BR!2sbr" 
+          width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+        </iframe>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Botões fixos de WhatsApp e Instagram -->
+  <div class="social-fixed">
+    <a href="https://wa.me/5581993030148" target="_blank" title="WhatsApp" class="whatsapp"><i class="fab fa-whatsapp"></i></a>
+    <a href="https://instagram.com/andreyguimerinfo" target="_blank" title="Instagram" class="instagram"><i class="fab fa-instagram"></i></a>
+  </div>
+
+  <footer>
+    &copy; 2025 AndreyGuimer Informática — Todos os direitos reservados
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
