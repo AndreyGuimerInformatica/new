@@ -4,6 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>AndreyGuimer Informática</title>
+  <meta name="description" content="Serviços de informática, manutenção, formatação, limpeza e muito mais. Contato e orçamento rápido!" />
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet" />
   <script src="https://kit.fontawesome.com/a81368914c.js" crossorigin="anonymous"></script>
   <link rel="stylesheet" href="style.css" />
@@ -28,17 +29,20 @@
       <li><a href="#budget">Orçamento</a></li>
       <li><a href="#feedback">Feedback</a></li>
       <li><a href="#contact">Contato</a></li>
-      <li><button id="toggle-theme" title="Alternar modo claro/escuro"><i class="fas fa-adjust"></i></button></li>
+      <li>
+        <button id="toggle-theme" title="Alternar modo claro/escuro"><i class="fas fa-adjust"></i></button>
+      </li>
     </ul>
   </nav>
 
   <main class="container">
-
     <!-- Home -->
     <section id="home" class="visible">
       <h1>Bem-vindo à AndreyGuimer Informática</h1>
       <p>Seu parceiro confiável para serviços de informática, manutenção, formatação, limpeza e muito mais.</p>
-      <button class="btn-primary" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">Solicite um Orçamento</button>
+      <button class="btn-primary" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">
+        Solicite um Orçamento
+      </button>
     </section>
 
     <!-- Serviços -->
@@ -58,7 +62,7 @@
         <div class="service-card">
           <i class="fas fa-network-wired"></i>
           <h3>Instalação do Pacote Office</h3>
-          <p>Instalação e configuração do pacote Ofiice, com total seguraça e 100% PERMANENTE.</p>
+          <p>Instalação e configuração do pacote Office, com total segurança e 100% permanente.</p>
         </div>
         <div class="service-card">
           <i class="fas fa-shield-alt"></i>
@@ -90,17 +94,17 @@
       <article class="blog-post">
         <h3>5 Dicas para Aumentar a Vida Útil do Seu PC</h3>
         <p>Manter o computador limpo e atualizado é essencial para garantir seu desempenho e durabilidade. Veja nossas dicas para cuidar melhor do seu equipamento.</p>
-        <a href="#" target="_blank">Leia mais</a>
+        <a href="#" target="_blank" rel="noopener">Leia mais</a>
       </article>
       <article class="blog-post">
         <h3>O Que Fazer Quando o Computador Não Liga?</h3>
         <p>Problemas de hardware podem ser assustadores, mas há passos simples para diagnóstico inicial. Saiba o que verificar antes de procurar ajuda especializada.</p>
-        <a href="#" target="_blank">Leia mais</a>
+        <a href="#" target="_blank" rel="noopener">Leia mais</a>
       </article>
       <article class="blog-post">
         <h3>Como Escolher um Antivírus de Confiança</h3>
         <p>Proteja seus dados com segurança. Descubra o que observar na hora de escolher um antivírus eficiente e leve para seu PC.</p>
-        <a href="#" target="_blank">Leia mais</a>
+        <a href="#" target="_blank" rel="noopener">Leia mais</a>
       </article>
     </section>
 
@@ -122,10 +126,10 @@
     <section id="videos">
       <h2>Vídeos Explicativos</h2>
       <div class="video-container">
-        <iframe width="560" height="315" src="https://www.youtube.com/watch?v=fCQPFn8M94k&t" title="Dicas de Manutenção" frameborder="0" allowfullscreen></iframe>
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/fCQPFn8M94k" title="Dicas de Manutenção" frameborder="0" allowfullscreen></iframe>
       </div>
       <div class="video-container">
-        <iframe width="560" height="315" src="https://www.youtube.com/watch?v=enoFIQEgtx4&t" title="Como Formatar PC" frameborder="0" allowfullscreen></iframe>
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/enoFIQEgtx4" title="Como Formatar PC" frameborder="0" allowfullscreen></iframe>
       </div>
     </section>
 
@@ -169,7 +173,7 @@
     <!-- Orçamento -->
     <section id="budget">
       <h2>Solicite um Orçamento Detalhado</h2>
-      <form action="https://formsubmit.co/andreyguimerinformatica@gmail.com" method="POST" />
+      <form id="budgetForm" action="https://formsubmit.co/andreyguimerinformatica@gmail.com" method="POST">
         <label for="clientName">Nome Completo:</label>
         <input type="text" id="clientName" name="clientName" required placeholder="Seu nome completo" />
 
@@ -189,11 +193,12 @@
         <label for="details">Detalhes do Serviço:</label>
         <textarea id="details" name="details" rows="4" placeholder="Descreva o serviço que deseja" required></textarea>
 
-        <button type="submit">Enviar Orçamento</button>
+        <button type="submit" class="btn-primary">Enviar Orçamento</button>
+        <button type="button" id="whatsappBudget" class="btn-whatsapp" title="Enviar orçamento pelo WhatsApp">
+          <i class="fab fa-whatsapp"></i> Orçamento WhatsApp
+        </button>
       </form>
     </section>
-
-   
 
     <!-- Feedback -->
     <section id="feedback">
@@ -217,7 +222,7 @@
     <!-- Contato -->
     <section id="contact">
       <h2>Fale Comigo</h2>
-      <form action="https://formsubmit.co/andreyguimerinformatica@gmail.com" method="POST" />
+      <form id="contactForm" action="https://formsubmit.co/andreyguimerinformatica@gmail.com" method="POST">
         <label for="name">Nome:</label>
         <input type="text" id="name" name="name" placeholder="Seu nome" required />
 
@@ -227,17 +232,20 @@
         <label for="message">Mensagem:</label>
         <textarea id="message" name="message" rows="5" placeholder="Escreva sua mensagem aqui..." required></textarea>
 
-        <button type="submit">Enviar</button>
+        <button type="submit" class="btn-primary">Enviar</button>
+        <button type="button" id="whatsappContact" class="btn-whatsapp" title="Enviar mensagem pelo WhatsApp">
+          <i class="fab fa-whatsapp"></i> WhatsApp
+        </button>
       </form>
     </section>
 
     <!-- Notícias tecnologia -->
-  <section id="noticias">
-  <h2>Notícias de Tecnologia</h2>
-  <ul id="news-list">
-    <li>Carregando notícias...</li>
-  </ul>
-</section>
+    <section id="noticias">
+      <h2>Notícias de Tecnologia</h2>
+      <ul id="news-list">
+        <li>Carregando notícias...</li>
+      </ul>
+    </section>
 
     <!-- Mapa -->
     <section id="map">
@@ -249,17 +257,20 @@
         </iframe>
       </div>
     </section>
-
   </main>
 
-  <!-- Botões fixos de WhatsApp e Instagram -->
+  <!-- Botões fixos sociais -->
   <div class="social-fixed">
-    <a href="https://wa.me/5581993030148" target="_blank" title="WhatsApp" class="whatsapp"><i class="fab fa-whatsapp"></i></a>
-    <a href="https://instagram.com/andreyguimerinfo" target="_blank" title="Instagram" class="instagram"><i class="fab fa-instagram"></i></a>
+    <a href="https://wa.me/5581993030148?text=Olá,%20gostaria%20de%20um%20orçamento" target="_blank" rel="noopener" class="whatsapp" title="WhatsApp">
+      <i class="fab fa-whatsapp"></i>
+    </a>
+    <a href="https://www.instagram.com/andreyguimerinformatica/" target="_blank" rel="noopener" class="instagram" title="Instagram">
+      <i class="fab fa-instagram"></i>
+    </a>
   </div>
 
   <footer>
-    &copy; 2025 AndreyGuimer Informática — Todos os direitos reservados
+    &copy; 2025 AndreyGuimer Informática - Todos os direitos reservados
   </footer>
 
   <script src="script.js"></script>
