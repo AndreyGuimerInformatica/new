@@ -79,23 +79,19 @@ if(localStorage.getItem('theme') === 'dark') {
   document.body.classList.add('dark-mode');
 }
 
-// Função simulada envio de orçamento
+// Funções simuladas envio formulários com alertas e reset
 function enviarOrcamento(event) {
   event.preventDefault();
   alert('Orçamento enviado com sucesso! Em breve entraremos em contato.');
   event.target.reset();
   return false;
 }
-
-// Função simulada envio newsletter
 function enviarNewsletter(event) {
   event.preventDefault();
   alert('Obrigado por assinar a newsletter!');
   event.target.reset();
   return false;
 }
-
-// Função simulada envio contato
 function enviarFormulario(event) {
   event.preventDefault();
   alert('Mensagem enviada com sucesso! Responderei em breve.');
@@ -104,30 +100,6 @@ function enviarFormulario(event) {
 }
 
 // Carregar notícias tecnologia via NewsAPI
-async function carregarNoticias() {
-  const newsList = document.getElementById('news-list');
-  const apiKey = 'SUA_API_KEY_AQUI'; // Coloque sua API key aqui
-  const url = `https://newsapi.org/v2/top-headlines?category=technology&language=pt&apiKey=${apiKey}`;
-
-  try {
-    const response = await fetch(url);
-    const data = await response.json();
-
-    if(data.articles && data.articles.length > 0) {
-      newsList.innerHTML = '';
-      data.articles.slice(0, 5).forEach(article => {
-        const li = document.createElement('li');
-        li.innerHTML = `<a href="${article.url}" target="_blank" rel="noopener">${article.title}</a>`;
-        newsList.appendChild(li);
-      });
-    } else {
-      newsList.textContent = 'Nenhuma notícia encontrada.';
-    }
-  } catch (error) {
-    newsList.textContent = 'Erro ao carregar notícias.';
-    console.error(error);
-  }
-}
 async function carregarNoticias() {
   const newsList = document.getElementById('news-list');
   const apiKey = 'fa00cc36653c42329e5e1180adf4a3e1'; // Sua chave
@@ -152,5 +124,18 @@ async function carregarNoticias() {
     console.error(error);
   }
 }
-
 window.addEventListener('load', carregarNoticias);
+
+// Botões Whatsapp nos formulários Orçamento e Contato
+const whatsappBudgetBtn = document.getElementById('whatsappBudget');
+const whatsappContactBtn = document.getElementById('whatsappContact');
+
+whatsappBudgetBtn.addEventListener('click', () => {
+  const text = encodeURIComponent('Olá, gostaria de solicitar um orçamento detalhado.');
+  window.open(`https://wa.me/5581993030148?text=${text}`, '_blank');
+});
+
+whatsappContactBtn.addEventListener('click', () => {
+  const text = encodeURIComponent('Olá, quero entrar em contato.');
+  window.open(`https://wa.me/5581993030148?text=${text}`, '_blank');
+});
