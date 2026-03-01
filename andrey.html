@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>AndreyGuimer Informática | Soluções em TI</title>
+    <link rel="icon" href="favicon.png" type="image/png" />
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        darkBg: '#0f172a',
+                        cardBg: '#1e293b',
+                        accentBlue: '#3b82f6',
+                        accentRed: '#ef4444',
+                        accentOrange: '#f97316',
+                        accentGreen: '#22c55e'
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        body { font-family: 'Poppins', sans-serif; background-color: #0f172a; color: #e2e8f0; }
+        .glass { background: rgba(30, 41, 59, 0.7); backdrop-filter: blur(12px); border-bottom: 1px solid rgba(255,255,255,0.1); }
+        .service-card:hover i { transform: scale(1.2) rotate(5deg); transition: all 0.3s ease; }
+        .service-card:hover { border-color: #3b82f6; }
+        .gallery-img { display: none; width: 100%; height: 400px; object-fit: cover; border-radius: 1rem; }
+        .gallery-img.active { display: block; animation: fadeIn 0.5s ease; }
+        @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+    </style>
+</head>
+<body class="overflow-x-hidden">
+
+    <nav class="fixed w-full z-50 glass">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-20 items-center">
+                <div class="flex items-center gap-3">
+                    <img src="logo.png" alt="Logo" class="h-10 w-auto">
+                    <span class="text-xl font-bold tracking-tight text-white hidden sm:block">ANDREY<span class="text-accentBlue">GUIMER</span></span>
+                </div>
+                
+                <div class="hidden lg:flex items-center space-x-6 text-sm font-medium">
+                    <a href="#home" class="hover:text-accentBlue transition">Início</a>
+                    <a href="#services" class="hover:text-accentBlue transition">Serviços</a>
+                    <a href="#pricing" class="hover:text-accentBlue transition">Preços</a>
+                    <a href="#gallery" class="hover:text-accentBlue transition">Galeria</a>
+                    <a href="#faq" class="hover:text-accentBlue transition">FAQ</a>
+                    <a href="#budget" class="bg-accentBlue hover:bg-blue-700 px-5 py-2 rounded-full text-white transition shadow-lg shadow-blue-500/20">Orçamento</a>
+                </div>
+
+                <button onclick="toggleMenu()" class="lg:hidden text-2xl text-white"><i class="fas fa-bars"></i></button>
+            </div>
+        </div>
+        <div id="mobile-menu" class="hidden lg:hidden bg-darkBg border-t border-slate-700 p-6 space-y-4">
+            <a href="#home" class="block" onclick="toggleMenu()">Início</a>
+            <a href="#services" class="block" onclick="toggleMenu()">Serviços</a>
+            <a href="#pricing" class="block" onclick="toggleMenu()">Preços</a>
+            <a href="#budget" class="block text-accentBlue font-bold" onclick="toggleMenu()">Orçamento</a>
+        </div>
+    </nav>
+
+    <section id="home" class="relative pt-40 pb-20 px-4 flex flex-col items-center text-center">
+        <div class="absolute top-20 w-72 h-72 bg-accentBlue/20 rounded-full blur-[120px] -z-10"></div>
+        <h1 class="text-4xl md:text-6xl font-bold text-white mb-6 leading-tight">
+            Tecnologia de Confiança para <br><span class="text-accentBlue">seu Computador</span>
+        </h1>
+        <p class="text-slate-400 max-w-2xl mb-10 text-lg">Manutenção, formatação e consultoria em Altinho-PE. O suporte técnico que você merece com a agilidade que você precisa.</p>
+        <div class="flex flex-wrap justify-center gap-4">
+            <a href="#budget" class="px-8 py-4 bg-accentBlue hover:bg-blue-600 rounded-2xl font-bold transition flex items-center gap-2">
+                <i class="fas fa-file-invoice-dollar"></i> Solicitar Orçamento
+            </a>
+            <a href="#services" class="px-8 py-4 border border-slate-700 hover:bg-slate-800 rounded-2xl font-bold transition">Nossos Serviços</a>
+        </div>
+    </section>
+
+    <section id="services" class="py-24 max-w-7xl mx-auto px-4">
+        <h2 class="text-3xl font-bold text-center mb-16">Serviços Oferecidos</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            <div class="service-card p-8 rounded-3xl bg-cardBg border border-slate-700 transition-all shadow-xl">
+                <i class="fas fa-laptop-code text-4xl text-accentBlue mb-6 block"></i>
+                <h3 class="text-xl font-bold mb-3 text-white">Formatação e SO</h3>
+                <p class="text-slate-400 text-sm">Windows e Linux com otimização total de desempenho.</p>
+            </div>
+            <div class="service-card p-8 rounded-3xl bg-cardBg border border-slate-700 transition-all shadow-xl">
+                <i class="fas fa-tools text-4xl text-accentRed mb-6 block"></i>
+                <h3 class="text-xl font-bold mb-3 text-white">Manutenção</h3>
+                <p class="text-slate-400 text-sm">Limpeza física, troca de peças e diagnóstico completo.</p>
+            </div>
+            <div class="service-card p-8 rounded-3xl bg-cardBg border border-slate-700 transition-all shadow-xl">
+                <i class="fas fa-network-wired text-4xl text-accentOrange mb-6 block"></i>
+                <h3 class="text-xl font-bold mb-3 text-white">Pacote Office</h3>
+                <p class="text-slate-400 text-sm">Instalação segura e configuração permanente.</p>
+            </div>
+            <div class="service-card p-8 rounded-3xl bg-cardBg border border-slate-700 transition-all shadow-xl">
+                <i class="fas fa-shield-alt text-4xl text-accentGreen mb-6 block"></i>
+                <h3 class="text-xl font-bold mb-3 text-white">Segurança</h3>
+                <p class="text-slate-400 text-sm">Remoção de vírus e configuração de backups.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="pricing" class="py-24 bg-slate-900/50 px-4">
+        <div class="max-w-7xl mx-auto text-center">
+            <h2 class="text-3xl font-bold text-white mb-12">Pacotes e Preços</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="p-8 bg-cardBg rounded-3xl border border-slate-700 hover:border-accentBlue transition">
+                    <h3 class="text-lg font-semibold mb-2">Essencial</h3>
+                    <div class="text-4xl font-bold text-white mb-6">R$ 20<span class="text-sm font-normal text-slate-500">,00</span></div>
+                    <ul class="text-slate-400 space-y-3 mb-8 text-sm text-left">
+                        <li><i class="fas fa-check text-accentBlue mr-2"></i> Formatação Simples</li>
+                        <li><i class="fas fa-check text-accentBlue mr-2"></i> Instalação de Drivers</li>
+                        <li><i class="fas fa-check text-accentBlue mr-2"></i> Limpeza de Disco</li>
+                    </ul>
+                    <a href="#budget" class="block py-3 bg-slate-800 hover:bg-slate-700 rounded-xl transition">Escolher</a>
+                </div>
+                <div class="p-8 bg-accentBlue rounded-3xl shadow-2xl scale-105 relative">
+                    <span class="absolute -top-3 left-1/2 -translate-x-1/2 bg-white text-accentBlue px-3 py-1 rounded-full text-xs font-bold uppercase">Mais Procurado</span>
+                    <h3 class="text-lg font-semibold mb-2">Combo Premium</h3>
+                    <div class="text-4xl font-bold text-white mb-6">R$ 50<span class="text-sm font-normal text-blue-200">,00</span></div>
+                    <ul class="text-white space-y-3 mb-8 text-sm text-left">
+                        <li><i class="fas fa-check mr-2"></i> Manutenção Preventiva</li>
+                        <li><i class="fas fa-check mr-2"></i> Limpeza Física Interna</li>
+                        <li><i class="fas fa-check mr-2"></i> Troca de Pasta Térmica</li>
+                    </ul>
+                    <a href="#budget" class="block py-3 bg-white text-accentBlue font-bold rounded-xl transition">Solicitar</a>
+                </div>
+                <div class="p-8 bg-cardBg rounded-3xl border border-slate-700 hover:border-accentBlue transition">
+                    <h3 class="text-lg font-semibold mb-2">Completo</h3>
+                    <div class="text-4xl font-bold text-white mb-6">R$ 70<span class="text-sm font-normal text-slate-500">,00</span></div>
+                    <ul class="text-slate-400 space-y-3 mb-8 text-sm text-left">
+                        <li><i class="fas fa-check text-accentBlue mr-2"></i> Formatação + Office</li>
+                        <li><i class="fas fa-check text-accentBlue mr-2"></i> Limpeza Preventiva</li>
+                        <li><i class="fas fa-check text-accentBlue mr-2"></i> Backup de Dados</li>
+                    </ul>
+                    <a href="#budget" class="block py-3 bg-slate-800 hover:bg-slate-700 rounded-xl transition">Escolher</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="gallery" class="py-24 max-w-4xl mx-auto px-4">
+        <h2 class="text-3xl font-bold text-center mb-12">Galeria de Serviços</h2>
+        <div class="relative group">
+            <img src="gallery1.jpg" class="gallery-img active shadow-2xl border-4 border-slate-800" alt="Serviço 1">
+            <img src="gallery2.jpg" class="gallery-img shadow-2xl border-4 border-slate-800" alt="Serviço 2">
+            <img src="gallery3.jpg" class="gallery-img shadow-2xl border-4 border-slate-800" alt="Serviço 3">
+            
+            <div class="absolute inset-0 flex items-center justify-between px-4 opacity-0 group-hover:opacity-100 transition">
+                <button id="prevBtn" class="w-12 h-12 bg-white/10 backdrop-blur rounded-full text-white hover:bg-white/20 transition"><i class="fas fa-chevron-left"></i></button>
+                <button id="nextBtn" class="w-12 h-12 bg-white/10 backdrop-blur rounded-full text-white hover:bg-white/20 transition"><i class="fas fa-chevron-right"></i></button>
+            </div>
+        </div>
+    </section>
+
+    <section id="faq" class="py-24 max-w-3xl mx-auto px-4">
+        <h2 class="text-3xl font-bold text-center mb-12">Perguntas Frequentes</h2>
+        <div class="space-y-4">
+            <details class="group bg-cardBg border border-slate-700 rounded-2xl overflow-hidden transition">
+                <summary class="flex justify-between items-center p-6 cursor-pointer list-none font-semibold text-white">
+                    Quanto tempo leva a formatação?
+                    <i class="fas fa-chevron-down group-open:rotate-180 transition"></i>
+                </summary>
+                <div class="p-6 pt-0 text-slate-400 border-t border-slate-700 bg-slate-800/30">
+                    Leva entre 45 minutos a 2 horas, dependendo do estado do computador e se ele possui SSD ou HD.
+                </div>
+            </details>
+            <details class="group bg-cardBg border border-slate-700 rounded-2xl overflow-hidden transition">
+                <summary class="flex justify-between items-center p-6 cursor-pointer list-none font-semibold text-white">
+                    Atende fora da cidade?
+                    <i class="fas fa-chevron-down group-open:rotate-180 transition"></i>
+                </summary>
+                <div class="p-6 pt-0 text-slate-400 border-t border-slate-700 bg-slate-800/30">
+                    Atualmente o atendimento físico é em Altinho-PE, mas realizamos suporte remoto para diversos problemas de software.
+                </div>
+            </details>
+        </div>
+    </section>
+
+    <section id="budget" class="py-24 px-4 bg-gradient-to-t from-blue-900/20 to-transparent">
+        <div class="max-w-4xl mx-auto bg-cardBg p-8 md:p-12 rounded-[2.5rem] border border-slate-700 shadow-2xl relative overflow-hidden">
+            <div class="absolute top-0 right-0 w-32 h-32 bg-accentBlue/10 rounded-full blur-3xl"></div>
+            <h2 class="text-3xl font-bold mb-8 text-center text-white">Solicite um Orçamento</h2>
+            
+            <form id="budgetForm" action="https://formsubmit.co/andreyguimerinformatica@gmail.com" method="POST" class="grid grid-cols-1 md:grid-cols-2 gap-6 relative z-10">
+                <div class="space-y-2">
+                    <label class="text-xs font-bold uppercase tracking-wider text-slate-500">Nome Completo</label>
+                    <input type="text" name="Nome" required class="w-full bg-slate-900 border border-slate-700 rounded-2xl p-4 focus:border-accentBlue outline-none transition" placeholder="Como podemos te chamar?">
+                </div>
+                <div class="space-y-2">
+                    <label class="text-xs font-bold uppercase tracking-wider text-slate-500">WhatsApp / Celular</label>
+                    <input type="text" name="WhatsApp" id="wpNumber" required class="w-full bg-slate-900 border border-slate-700 rounded-2xl p-4 focus:border-accentBlue outline-none transition" placeholder="(00) 00000-0000">
+                </div>
+                <div class="md:col-span-2 space-y-2">
+                    <label class="text-xs font-bold uppercase tracking-wider text-slate-500">Serviço Desejado</label>
+                    <select name="TipoServiço" id="wpService" class="w-full bg-slate-900 border border-slate-700 rounded-2xl p-4 focus:border-accentBlue outline-none transition appearance-none">
+                        <option value="Formatação">Formatação e Instalação de SO</option>
+                        <option value="Manutenção">Manutenção Preventiva / Corretiva</option>
+                        <option value="Combo Premium">Combo Manutenção Premium (R$ 50)</option>
+                        <option value="Pacote Office">Pacote Office / Ativação</option>
+                        <option value="Outro">Outros Serviços</option>
+                    </select>
+                </div>
+                <button type="submit" class="md:col-span-2 py-4 bg-accentBlue hover:bg-blue-600 text-white font-bold rounded-2xl transition-all shadow-lg shadow-blue-500/20">
+                    <i class="fas fa-paper-plane mr-2"></i> Enviar por E-mail
+                </button>
+                <button type="button" onclick="sendToWhatsApp()" class="md:col-span-2 py-4 bg-accentGreen hover:bg-green-600 text-white font-bold rounded-2xl transition-all flex items-center justify-center gap-2">
+                    <i class="fab fa-whatsapp text-xl"></i> Solicitar via WhatsApp
+                </button>
+            </form>
+        </div>
+    </section>
+
+    <footer class="py-12 px-4 border-t border-slate-800 text-center">
+        <img src="logo.png" alt="Logo" class="h-12 mx-auto mb-6 opacity-80">
+        <div class="flex justify-center gap-6 mb-8">
+            <a href="https://www.instagram.com/andreyguimerinfo/" target="_blank" class="w-12 h-12 bg-slate-800 rounded-full flex items-center justify-center hover:bg-accentOrange transition text-xl"><i class="fab fa-instagram"></i></a>
+            <a href="https://wa.me/5581993030148" class="w-12 h-12 bg-slate-800 rounded-full flex items-center justify-center hover:bg-accentGreen transition text-xl"><i class="fab fa-whatsapp"></i></a>
+        </div>
+        <p class="text-slate-500 text-sm italic mb-2">"Soluções rápidas para problemas complexos."</p>
+        <p class="text-slate-600 text-xs">© 2026 AndreyGuimer Informática - Altinho/PE. Todos os direitos reservados.</p>
+    </footer>
+
+    <a href="https://wa.me/5581993030148" target="_blank" class="fixed bottom-6 right-6 w-16 h-16 bg-accentGreen text-white rounded-full flex items-center justify-center text-3xl shadow-2xl hover:scale-110 hover:rotate-12 transition-all z-50">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <script>
+        // Menu Mobile Toggle
+        function toggleMenu() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        }
+
+        // Slider da Galeria
+        const imgs = document.querySelectorAll('.gallery-img');
+        let currentIndex = 0;
+
+        function showImage(index) {
+            imgs.forEach((img, i) => img.classList.toggle('active', i === index));
+        }
+
+        document.getElementById('nextBtn').onclick = () => {
+            currentIndex = (currentIndex + 1) % imgs.length;
+            showImage(currentIndex);
+        };
+
+        document.getElementById('prevBtn').onclick = () => {
+            currentIndex = (currentIndex - 1 + imgs.length) % imgs.length;
+            showImage(currentIndex);
+        };
+
+        // Integração Inteligente com WhatsApp
+        function sendToWhatsApp() {
+            const nome = document.querySelector('input[name="Nome"]').value;
+            const servico = document.getElementById('wpService').value;
+            if(!nome) { alert('Por favor, digite seu nome no formulário primeiro.'); return; }
+            
+            const mensagem = encodeURIComponent(`Olá Andrey! Meu nome é ${nome}. Gostaria de solicitar um orçamento para: ${servico}.`);
+            window.open(`https://wa.me/5581993030148?text=${mensagem}`, '_blank');
+        }
+
+        // Auto-slide galeria a cada 5 segundos
+        setInterval(() => {
+            currentIndex = (currentIndex + 1) % imgs.length;
+            showImage(currentIndex);
+        }, 5000);
+    </script>
+</body>
+</html>
